@@ -1,192 +1,131 @@
-\# SMS Spam Classifier
+# Student Grade Calculator
 
+A beginner-friendly Python CLI application that calculates students' total marks, average percentage, letter grades, and overall pass/fail results.
 
+## Project Overview
 
-A machine learning project that classifies SMS messages as \*\*Spam\*\* or \*\*Ham (Not Spam)\*\* using TF-IDF text features and a Multinomial Naive Bayes classifier.
+Student Grade Calculator is a simple command-line application built with Python. It allows users to enter a student's name and marks for multiple subjects, then automatically calculates the total marks, average percentage, corresponding letter grade, and final result.
 
+This project demonstrates fundamental Python programming concepts, input validation, exception handling, and automated testing.
 
+## Features
 
-\## Features
+- Accepts a student's name and multiple subjects
+- Takes marks for individual subjects
+- Validates marks within the range of 0–100
+- Calculates total marks and average percentage
+- Assigns letter grades from A+ to F
+- Determines the overall pass/fail result
+- Handles invalid numeric input
+- Includes automated unit tests using `unittest`
+- Runs directly in the terminal without external dependencies
 
+## Technologies Used
 
+- **Python** — Core programming language
+- **unittest** — Automated testing framework
+- **Git** — Version control
+- **GitHub** — Source code hosting
 
-\- SMS spam classification using NLP techniques
+## Requirements
 
-\- TF-IDF feature extraction
+- Python 3.10 or newer
+- Git (optional, for cloning the repository)
 
-\- Training and testing split with stratification
+No external Python packages are required.
 
-\- Evaluation using accuracy, precision, recall, F1-score, and confusion matrix
+## Getting Started
 
-\- Interactive Streamlit web application
-
-\- Automated unit tests
-
-
-
-\## Tech Stack
-
-
-
-\- Python 3.11
-
-\- Pandas
-
-\- Scikit-learn
-
-\- Streamlit
-
-\- Matplotlib
-
-\- Joblib
-
-
-
-\## Dataset
-
-
-
-This project uses the UCI SMS Spam Collection dataset.
-
-
-
-Source: https://archive.ics.uci.edu/dataset/228/sms+spam+collection
-
-
-
-\## Installation
-
-
-
-Clone this repository, then create and activate a virtual environment.
-
-
+### 1. Clone the Repository
 
 ```bash
-
-py -3.11 -m venv .venv
-
+git clone https://github.com/ahsanhabibabir04/student-grade-calculator.git
 ```
 
-
-
-Install the dependencies:
-
-
+### 2. Navigate to the Project Directory
 
 ```bash
-
-.venv\\Scripts\\python.exe -m pip install pandas scikit-learn streamlit matplotlib joblib
-
+cd student-grade-calculator
 ```
 
-
-
-\## Train and Evaluate the Model
-
-
+### 3. Run the Application
 
 ```bash
-
-.venv\\Scripts\\python.exe main.py
-
+python main.py
 ```
 
+Follow the on-screen instructions to enter the student's name, subjects, and marks.
 
-
-The trained model is saved to `models/sms\_spam\_model.joblib`.
-
-
-
-\## Run the Web App
-
-
+### 4. Run Automated Tests
 
 ```bash
-
-.venv\\Scripts\\python.exe -m streamlit run app.py
-
+python -m unittest -v
 ```
 
+This command runs the available unit tests and displays their results in the terminal.
 
+## Grading Scale
 
-Open the local URL shown in the terminal.
+The application uses the following sample grading scale:
 
+| Average Percentage | Letter Grade |
+|:---:|:---:|
+| 80–100% | A+ |
+| 70–79.99% | A |
+| 60–69.99% | A- |
+| 50–59.99% | B |
+| 40–49.99% | C |
+| Below 40% | F |
 
+### Pass/Fail Criteria
 
-\## Run Tests
+A student passes only if every subject mark is at least 40. If the student scores below 40 in any subject, the overall result is **Fail**.
 
+**Note:** This is a sample grading scale for educational purposes and does not represent an official national grading policy.
 
-
-```bash
-
-.venv\\Scripts\\python.exe -m unittest -v test\_main.py
-
-```
-
-
-
-\## Evaluation Results
-
-
-
-On the current 20% held-out test split:
-
-
-
-\- Accuracy: 95.06%
-
-\- Spam precision: 100% (rounded)
-
-\- Spam recall: 60.16% (rounded)
-
-
-
-The model missed 51 of 128 spam messages in this test split. Accuracy alone does not fully describe performance, and the model should not be considered production-ready.
-
-
-
-\## Project Structure
-
-
+## Project Structure
 
 ```text
-
-SMS-Spam-Classifier/
-
-├── data/
-
-│   └── SMSSpamCollection
-
-├── models/
-
-│   └── sms\_spam\_model.joblib
-
+student-grade-calculator/
 ├── main.py
-
-├── app.py
-
-├── test\_main.py
-
-├── .gitignore
-
-└── README.md
-
+├── test_main.py
+├── README.md
+└── .gitignore
 ```
 
+## Learning Outcomes
 
+Through this project, I practiced:
 
-\## Limitations
+- Writing and organizing Python functions
+- Using conditional statements and loops
+- Handling user input and validating data
+- Implementing exception handling
+- Performing calculations and assigning grades
+- Writing automated tests with Python's `unittest`
+- Managing project files using Git and GitHub
+- Documenting a software project with Markdown
 
+## Future Improvements
 
+Potential enhancements for future versions include:
 
-This is an educational project. Predictions may be incorrect, particularly for spam messages that differ from the training examples.
+- Saving student results to a file
+- Generating detailed student report cards
+- Supporting multiple students in a single session
+- Adding a graphical user interface (GUI)
+- Exporting results to CSV
 
+## Author
 
+**M.A. Ahsan Habib Abir**
 
-\## Author
+Aspiring Computer Science and Artificial Intelligence student with an interest in Python programming, machine learning, and software development.
 
+## Repository
 
+GitHub: [Student Grade Calculator](https://github.com/ahsanhabibabir04/student-grade-calculator)
 
-M.A. Ahsan Habib Abir
+---
 
+If you find this project useful, consider giving the repository a star.
